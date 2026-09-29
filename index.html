@@ -200,6 +200,10 @@
                 <h4 style="color: var(--dark-gold); border-bottom: 1px solid #B38728; padding-bottom: 10px; margin-bottom: 15px; font-size: 18px;">🎁 滿額贈 <br><span style="font-size: 12px; color: var(--accent-red); font-weight: normal;">（單筆總訂單金額計算，所有品項金額都列入計算）</span></h4>
                 <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 14px; color: #444;">
                     <li style="margin-bottom: 8px;">
+                        🈵️ 滿 $8,000 贈星巴克飲料券乙張<br>
+                        <span style="display: inline-block; margin-left: 12px; color: #666; font-size: 13px;">(可累贈，單筆訂單最多贈五張)</span>
+                    </li>
+                    <li style="margin-bottom: 8px;">
                         🈵️ 滿 $12,000 贈保溫杯乙個<br>
                         <span style="display: inline-block; margin-left: 12px; color: #666; font-size: 13px;">(可累贈，單筆訂單最多贈三個)</span>
                     </li>
@@ -341,6 +345,7 @@
         }
 
         let gifts = [];
+        if (finalPay >= 8000) gifts.push(`✨ 星巴克飲料券 × ${Math.min(Math.floor(finalPay / 8000), 5)} 張`);
         if (finalPay >= 12000) gifts.push(`✨ 保溫杯 × ${Math.min(Math.floor(finalPay / 12000), 3)} 個`);
         const groupTag = `<span style="background:var(--group-green); color:#FFF; font-size:10px; font-weight:700; padding:1px 6px; border-radius:8px; margin-left:4px;">群友限定</span>`;
         if (finalPay >= 30000) gifts.push(`✨ 高級枕頭 × ${Math.min(Math.floor(finalPay / 30000), 2)} 顆${groupTag}`);
